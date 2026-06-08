@@ -1,0 +1,6 @@
+{
+  "_comment": "Replace this file with your actual ~/.claude/settings.json",
+  "_note": "This file configures Claude Code behavior: permissions, hooks, theme, etc.",
+  "_how": "install.ps1 copies this to ~/.claude/settings.json on a new machine.",
+  "theme": "dark"
+}
