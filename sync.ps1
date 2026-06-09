@@ -42,5 +42,5 @@ if ($status) {
     git push origin main
     Write-Host "Bootstrap pushed to GitHub."
 } else {
-    Write-Host "Nothing changed — no commit needed."
+    Write-Host "Nothing changed -- no commit needed."
 }

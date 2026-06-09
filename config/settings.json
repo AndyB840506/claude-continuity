@@ -1,6 +1,45 @@
 {
-  "_comment": "Replace this file with your actual ~/.claude/settings.json",
-  "_note": "This file configures Claude Code behavior: permissions, hooks, theme, etc.",
-  "_how": "install.ps1 copies this to ~/.claude/settings.json on a new machine.",
-  "theme": "dark"
+    "hooks":  {
+                  "PreToolUse":  [
+                                     {
+                                         "matcher":  "Bash",
+                                         "hooks":  [
+                                                       {
+                                                           "type":  "command",
+                                                           "command":  "powershell.exe -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\andre\\.claude\\deploy-preflight-gate.ps1\""
+                                                       }
+                                                   ]
+                                     }
+                                 ],
+                  "PostToolUse":  [
+                                      {
+                                          "matcher":  "Write|Edit",
+                                          "hooks":  [
+                                                        {
+                                                            "type":  "command",
+                                                            "command":  "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"$bad = @(); Get-ChildItem -Recurse -Filter *.json | ForEach-Object { $f = $_.FullName; $bytes = [System.IO.File]::ReadAllBytes($f); if ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF) { $text = [System.Text.Encoding]::UTF8.GetString($bytes, 3, $bytes.Length - 3); [System.IO.File]::WriteAllText($f, $text, [System.Text.UTF8Encoding]::new($false)); $bytes = [System.IO.File]::ReadAllBytes($f) }; $c = [System.Text.Encoding]::UTF8.GetString($bytes); try { $null = $c | ConvertFrom-Json } catch { $bad += $f } }; if ($bad.Count -gt 0) { $msg = \u0027JSON parse error in: \u0027 + ($bad -join \u0027, \u0027); Write-Output (ConvertTo-Json -Compress -InputObject @{ systemMessage = $msg }) }\""
+                                                        }
+                                                    ]
+                                      }
+                                  ]
+              },
+    "statusLine":  {
+                       "type":  "command",
+                       "command":  "powershell.exe -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\andre\\.claude\\statusline-context.ps1\""
+                   },
+    "enabledPlugins":  {
+                           "vercel-plugin@vercel":  true
+                       },
+    "autoCompactEnabled":  false,
+    "effortLevel":  "high",
+    "mcpServers":  {
+                       "filesystem":  {
+                                          "command":  "npx",
+                                          "args":  [
+                                                       "-y",
+                                                       "@modelcontextprotocol/server-filesystem",
+                                                       "C:\\Users\\andre\\repos"
+                                                   ]
+                                      }
+                   }
 }
