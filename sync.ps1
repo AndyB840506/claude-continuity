@@ -39,7 +39,7 @@ $date = Get-Date -Format "yyyy-MM-dd"
 $status = git status --porcelain
 if ($status) {
     git commit -m "sync: Claude config + memory $date"
-    git push origin main
+    git push origin master
     Write-Host "Bootstrap pushed to GitHub."
 } else {
     Write-Host "Nothing changed -- no commit needed."
