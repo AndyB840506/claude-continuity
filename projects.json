@@ -1,7 +1,118 @@
 [
-  {
-    "url": "https://github.com/YOUR_USERNAME/YOUR_REPO.git",
-    "folderName": "my-project",
-    "note": "Replace with your actual repo URL and folder name. Add more entries as needed."
-  }
+    {
+        "url":  "https://github.com/AndyB840506/Claude-Code.git",
+        "folderName":  "Claude-Code"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/claude-continuity.git",
+        "folderName":  "claude-continuity"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/claude-kits.git",
+        "folderName":  "claude-kits"
+    },
+    {
+        "url":  "https://github.com/Lucca-Tech/claude-megamind.git",
+        "folderName":  "claude-megamind"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/claude-projects.git",
+        "folderName":  "claude-projects"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/claude-skills.git",
+        "folderName":  "claude-skills"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/estimador.git",
+        "folderName":  "estimador"
+    },
+    {
+        "url":  "https://github.com/Lucca-Tech/hiresignal.git",
+        "folderName":  "hiresignal"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-ai-lead-generator.git",
+        "folderName":  "kit-ai-lead-generator"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-ai-lead-generator-app.git",
+        "folderName":  "kit-ai-lead-generator-app"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-auditoria-meta-ads.git",
+        "folderName":  "kit-auditoria-meta-ads"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-auditoria-negocio.git",
+        "folderName":  "kit-auditoria-negocio"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-auditoria-seo.git",
+        "folderName":  "kit-auditoria-seo"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-automatizaciones-n8n.git",
+        "folderName":  "kit-automatizaciones-n8n"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-dashboard-facturas.git",
+        "folderName":  "kit-dashboard-facturas"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-estimador-servicios.git",
+        "folderName":  "kit-estimador-servicios"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-extension-chrome.git",
+        "folderName":  "kit-extension-chrome"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-instagram-web.git",
+        "folderName":  "kit-instagram-web"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-podcast-visualizer.git",
+        "folderName":  "kit-podcast-visualizer"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-prospeccion.git",
+        "folderName":  "kit-prospeccion"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/claude-code-skills.git",
+        "folderName":  "kit-skill-creator"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-smart-recruiter.git",
+        "folderName":  "kit-smart-recruiter"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/kit-web-scrolling.git",
+        "folderName":  "kit-web-scrolling"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/leads.git",
+        "folderName":  "leads"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/lucca-tech-web.git",
+        "folderName":  "lucca-tech-web"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/podcast-creator-kit.git",
+        "folderName":  "podcast-creator-kit"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/skill-creator-web.git",
+        "folderName":  "skill-creator-web"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/skills.git",
+        "folderName":  "skills"
+    },
+    {
+        "url":  "https://github.com/AndyB840506/the-freelancer.git",
+        "folderName":  "the-freelancer"
+    }
 ]
