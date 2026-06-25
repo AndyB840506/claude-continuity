@@ -1,0 +1,28 @@
+# Memory Index
+
+- [Output drive rule](project_output_drive_rule.md) — production output to E:\ (desktop) / D:\ (laptop), never C:\
+- [Two PCs](project_two_pcs.md) — desktop has E: + RTX 3080 Ti + WhisperX; laptop is C:/D: only, RTX 3060 6GB
+- [Design reference rule](feedback_design_references.md) — Always check Dribbble, Awwwards, Pinterest before building/improving web pages
+- [Session-close has no Gdrive step](feedback_session_close_no_gdrive.md) — verify live SKILL.md, don't trust stale handoff "next steps"
+- [Always backup to GitHub](feedback_always_backup_github.md) — commit+push tras cambios por si cambia al portátil; ojo: memoria NO está en este repo (sync por claude-bootstrap)
+- [Client docs: audience first](feedback_client_docs_audience_first.md) — pin audience/issuer/language/concealment before drafting commercial docs
+- [HTML for Spotify](feedback_html_for_spotify.md) — "en HTML" = marcado para pegar en Spotify, no una página renderizada
+- [Flow quote-card text validation](feedback_flow_quotecard_text_validation.md) — validar texto de cards vs audio real + sin-tildes antes de aprobar
+- [Reskin ≠ overhaul](feedback_reskin_vs_overhaul.md) — "basic/not premium" = change architecture (layout, type scale, motion), not just colors/fonts; ask for an Awwwards/Dribbble ref
+- [Premium web design](feedback_premium_web_design.md) — art-direction FIRST, ban the generic AI skeleton (centered hero, 3 cards, carousel, gradient ring, Inter); see web-page-kit design-guide Rule 0
+- [Security baseline for client sites](feedback_security_baseline_client_sites.md) — apply the security hardening pass to Andyfreelancer-delivered client sites too, not just our own
+- [MPD guiones: carne investigada](feedback_mpd_guion_carne_investigada.md) — research real facts (no inventar), match Sabbath/Kraken depth; thin draft rejected
+- [MPD episodes = 2 parts](project_mpd_episodes_two_parts.md) — default to 2-part structure due to research depth; build the P1/P2 cut from the start
+- [BTQ guion style guide](reference_btq_guion_style_guide.md) — consult btq-production/guion-style-btq.md before writing any BTQ guion (chispa rules)
+- [andyfreelancer.com infra](reference_andyfreelancer_infra.md) — Express on DO App Platform behind Cloudflare; DNS at DO (Networking), Porkbun registrar dormant; email via Porkbun MX on apex; use DoH not local nslookup
+- [Menús sí, screenshots los saltan](feedback_menus_welcome.md) — usar AskUserQuestion; rechazo + screenshot = "Other" no acepta imágenes, no rechazo al menú
+- [Sesiones paralelas a propósito](feedback_parallel_sessions.md) — compartimenta trabajo en sesiones separadas; no asumir estado cruzado
+- [Interés en graphify visual](project_graphify_interest.md) — quiere algo tipo graphify pero visual y ligero; NO descartado
+- [Validar antes de teorizar](feedback_validate_before_theorizing.md) — al debuggear, cross-checkear el instrumento/stack antes de construir una teoría (DoH vs nslookup; verificar stack de fixes externos); pedir estado/URL exacta de servicios externos que no puedo ver
+- [DNS peligro en sitio live](feedback_live_dns_danger.md) — antes de tocar DNS/dominio/cert de un sitio live, confirmar que NO es destructivo (Vercel domain churn resetea cert; Porkbun "update nameservers"; no mover NS)
+- [Named concept drives render](feedback_named_concept_drives_render.md) — el concepto nombrado decide el mood; experiencia/boutique ≠ grid de ingeniería; specimen HTML en vivo > mockup de Canva
+- [Andyfreelancer redesign](project_andyfreelancer_redesign.md) — boutique-showroom + fondo mapa-mundi interactivo; index-showroom.html es WIP, NO está live
+- [Deploy mechanisms](reference_deploy_mechanisms.md) — andyfreelancer auto-deploys on git push (DO); BTQ needs `vercel --prod` CLI, NOT git push
+- [BTQ contact form](reference_btq_contact_form.md) — Web3Forms static form, recipient andy@behind-thequeue.com, access key in the form markup
+- [Redesign feature parity](feedback_redesign_feature_parity.md) — al reemplazar una página live, auditar parity Y discoverability; no quitar ni enterrar contacto/email/redes/nav
+- [Kuma Talent infra](reference_kuma_infra.md) — kumatalent.com=marketing (Vercel kuma-talent-web), app.kumatalent.com=HireSignal (DO); DNS at DO, GoDaddy email; don't churn Vercel domains (resets cert), set apex as serving

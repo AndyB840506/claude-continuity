@@ -6,7 +6,7 @@ Estas instrucciones aplican a todos los proyectos y workspaces sin excepción.
 
 ## Environment
 
-Windows with PowerShell 5.1. Use PowerShell (not Bash/xcopy) for file operations. Avoid backtick-quotes, Unicode characters, and inline if-expressions in scripts — PS 5.1 chokes on these.
+Windows with PowerShell 5.1. Use PowerShell (not Bash/xcopy) for file operations. Avoid backtick-quotes, Unicode characters, and inline if-expressions in scripts — PS 5.1 chokes on these. For multi-line git commit messages use a temp file + `git commit -F` with `Set-Content -Encoding ASCII` — `-Encoding utf8` in PS 5.1 writes a BOM that corrupts the commit title.
 
 ---
 

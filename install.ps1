@@ -12,7 +12,7 @@ $claudeDir = "$env:USERPROFILE\.claude"
 
 # ---- CONFIGURE THESE ----
 # URL of the repo that contains your Claude skills (cloned into ~/.claude/skills/)
-$SKILLS_REPO_URL = "https://github.com/YOUR_USERNAME/YOUR_SKILLS_REPO.git"
+$SKILLS_REPO_URL = "https://github.com/AndyB840506/claude-code-skills.git"
 # -------------------------
 
 # 1. Ask for projects base directory
@@ -57,20 +57,19 @@ foreach ($p in $projects) {
     }
 }
 
-# 6. Restore memory files
-# Note: Claude Code derives the project slug from the actual workspace path.
-# If memory doesn't load on the first session, check ~/.claude/projects/ for the
-# actual slug name and copy memory files there manually.
-foreach ($p in $projects) {
-    $fullPath = Join-Path $BaseDir $p.folderName
-    $slug = $fullPath.ToLower() -replace '[:\\/ ]', '--' -replace '-{2,}', '--'
-    $slug = $slug.TrimStart('-')
-    $dest = "$claudeDir\projects\$slug\memory"
-    $src = ".\memory\$($p.folderName)"
-    if ((Test-Path $src) -and (Get-ChildItem $src -File).Count -gt 0) {
-        New-Item -ItemType Directory -Force $dest | Out-Null
-        Copy-Item "$src\*" $dest -Force
-        Write-Host "Memory restored for $($p.folderName)"
+# 6. Restore memory files. The repo's memory\<name> folders are keyed by Claude's REAL
+# project slug (saved verbatim by sync), so restore mirrors them straight back -- no slug guessing.
+$memRoot = ".\memory"
+if (Test-Path $memRoot) {
+    Get-ChildItem $memRoot -Directory | ForEach-Object {
+        $src = $_.FullName
+        $files = Get-ChildItem $src -File -Filter *.md | Where-Object { $_.Name -notlike "README*" }
+        if ($files.Count -gt 0) {
+            $dest = "$claudeDir\projects\$($_.Name)\memory"
+            New-Item -ItemType Directory -Force $dest | Out-Null
+            $files | ForEach-Object { Copy-Item $_.FullName $dest -Force }
+            Write-Host "Memory restored: $($_.Name)"
+        }
     }
 }
 

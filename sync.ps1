@@ -18,18 +18,18 @@ Copy-Item "$claudeDir\CLAUDE.md" ".\config\CLAUDE.md" -Force
 Copy-Item "$claudeDir\settings.json" ".\config\settings.json" -Force
 Write-Host "Config synced."
 
-# 2. Sync memory for each project
-$projects = Get-Content ".\projects.json" | ConvertFrom-Json
-foreach ($p in $projects) {
-    $fullPath = Join-Path $baseDir $p.folderName
-    $slug = $fullPath.ToLower() -replace '[:\\/ ]', '--' -replace '-{2,}', '--'
-    $slug = $slug.TrimStart('-')
-    $src = "$claudeDir\projects\$slug\memory"
-    if (Test-Path $src) {
-        $dest = ".\memory\$($p.folderName)"
+# 2. Sync ALL real memory folders verbatim.
+# Do NOT recompute Claude's project slug -- the derivation differs from Claude Code's
+# (case + dash handling), so a computed slug silently misses the real folder. Instead,
+# copy every ~/.claude/projects/*/memory that actually has files, keyed by its real name.
+$projRoot = "$claudeDir\projects"
+Get-ChildItem $projRoot -Directory | ForEach-Object {
+    $src = Join-Path $_.FullName "memory"
+    if ((Test-Path $src) -and (Get-ChildItem $src -File -ErrorAction SilentlyContinue)) {
+        $dest = ".\memory\$($_.Name)"
         New-Item -ItemType Directory -Force $dest | Out-Null
-        Copy-Item "$src\*" $dest -Force
-        Write-Host "Memory synced: $($p.folderName)"
+        Copy-Item "$src\*" $dest -Recurse -Force
+        Write-Host "Memory synced: $($_.Name)"
     }
 }
 

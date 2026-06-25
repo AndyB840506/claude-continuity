@@ -7,7 +7,7 @@
 CLAUDE_DIR="$HOME/.claude"
 
 # ---- CONFIGURE THIS ----
-SKILLS_REPO_URL="https://github.com/YOUR_USERNAME/YOUR_SKILLS_REPO.git"
+SKILLS_REPO_URL="https://github.com/AndyB840506/claude-code-skills.git"
 # ------------------------
 
 # 1. Ask for projects base directory
@@ -49,25 +49,26 @@ for p in projects:
         print(f'{p[\"folderName\"]} already exists — skipping.')
 " "$BASE_DIR"
 
-# 6. Restore memory
+# 6. Restore memory. The repo's memory/<name> folders are keyed by Claude's REAL project
+# slug (saved verbatim by sync), so restore mirrors them straight back -- no slug guessing.
 python3 -c "
-import json, os, shutil, re, sys
-projects = json.load(open('projects.json'))
-base = sys.argv[1]
+import os, shutil
 claude_dir = os.path.expanduser('~/.claude')
-for p in projects:
-    full = os.path.join(base, p['folderName'])
-    slug = re.sub(r'[:\\/ ]', '--', full.lower())
-    slug = re.sub(r'-{2,}', '--', slug).lstrip('-')
-    dest = os.path.join(claude_dir, 'projects', slug, 'memory')
-    src = os.path.join('memory', p['folderName'])
-    if os.path.exists(src) and any(f.endswith('.md') for f in os.listdir(src)):
+mem_root = 'memory'
+if os.path.isdir(mem_root):
+    for name in sorted(os.listdir(mem_root)):
+        src = os.path.join(mem_root, name)
+        if not os.path.isdir(src):
+            continue
+        files = [f for f in os.listdir(src) if f.endswith('.md') and not f.startswith('README')]
+        if not files:
+            continue
+        dest = os.path.join(claude_dir, 'projects', name, 'memory')
         os.makedirs(dest, exist_ok=True)
-        for f in os.listdir(src):
-            if not f.startswith('README'):
-                shutil.copy2(os.path.join(src, f), dest)
-        print(f'Memory restored: {p[\"folderName\"]}')
-" "$BASE_DIR"
+        for f in files:
+            shutil.copy2(os.path.join(src, f), dest)
+        print(f'Memory restored: {name}')
+"
 
 echo ""
 echo "Claude restored. Open VS Code in any project folder to start."

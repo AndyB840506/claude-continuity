@@ -1,0 +1,47 @@
+- [Podcast Visualizer Kit](podcast_visualizer_kit.md) — Kit en kit-podcast-visualizer\, flujo 2 pasos, waveform rojo p2p 1920×500
+- [BTQ Artwork Flow](btq_artwork_flow.md) — Google Flow + Nani Banana Pro workflow, density-first prompts
+- [BTQ Prism = Pink Floyd Recognition](btq_artwork_pink_floyd_prism_choice.md) — EP.16 usa prisma de Dark Side of the Moon (no The Wall) para reconocimiento instantáneo del artista
+- [BTQ Production State](btq_production_state.md) — EP.011–014 completos, EP.015 pendiente grabación (assets listos)
+- [Mr. Putrid's Den — Proyecto](mrputridsden_project.md) — EP.001-002 live, EP.003 v2 listo (co-host balance + CSS ligero), EP.004 en roadmap
+- [Windows Tool Selection](feedback_windows_tool_selection.md) — Use PowerShell tool (not Bash) for file ops on Windows. Bash returns exit 127 on Remove-Item etc.
+- [Composer en Windows](feedback_composer_windows.md) — Verificar instalación + antivirus antes de composer install. SSL error 60 = antivirus bloqueando, no solo config.
+- [PHP Namespaces en bloques](feedback_php_namespaces.md) — `use` solo al top del archivo. Dentro de if/bloques usar `\Vendor\Class::CONST`. En catch clauses, usar `\Throwable` no `Exception`. Síntoma: JSON parse error con HTML.
+- [PHP display_errors en JSON endpoints](feedback_php_display_errors.md) — Agregar `ini_set('display_errors', 0)` al top de TODO archivo PHP que devuelva JSON. Previene HTML inyectado que corrompe respuesta.
+- [Dev vs Served Folder](feedback_dev_vs_served_folder.md) — Editar siempre la carpeta servida (laragon/www/), no la carpeta de desarrollo. Editar la carpeta incorrecta = fixes invisibles.
+- [PHP JSON Header Order](feedback_php_json_header_order.md) — Headers y display_errors=0 ANTES de cualquier require_once. Si require_once falla, PHP inyecta HTML → JSON parse error.
+- [Antivirus + SMTP SSL](feedback_antivirus_smtp_ssl.md) — SSL error 60 en SMTP Windows = antivirus bloqueando. Fix: excepción en antivirus + SMTPOptions bypass en PHPMailer.
+- [Proyectos Duplicados](feedback_duplicate_projects.md) — Verificar con Get-ChildItem antes de auditar. Hay carpetas que no son proyectos reales: ZIPs descomprimidos, carpetas sin estructura.
+- [BTQ Script Quality Standards](btq_script_quality_standards.md) — Qué hace un guión BTQ bueno vs débil: historia con hechos sorprendentes, lecciones ancladas en momentos nombrados, referencias de negocios, herramienta mental permanente en Aplicable Hoy.
+- [Kuma Talent — Empresa Canadiense](project_kuma_talent_canada.md) — Mercado inicial = Canada. Precios en USD + CAD (~1.37 CAD/USD). No LatAm/Colombia como referencia primaria.
+- [Kuma Group — AI Platform Grant](project_kuma_group_ai_platform.md) — Ontario Chamber + NRC IRAP (federal) grant $58,500 CAD. Kuma Flow + Hiresignal. Hugo=Ontario, Andres=Colombia remote. 6 files in proposals/.
+- [Andres Bermudez — Nombre correcto](user_andres_bermudez.md) — Git config dice "Andre Banda" — INCORRECTO. Nombre real: Andres Bermudez. Lead dev de Kuma Group/Talent. Colombia (remote).
+- [Proactive Memory Saving](feedback_proactive_memory.md) — Save project details (team, location, entity, contact) in the same turn established — don't wait for user to prompt it.
+- [winget --source winget](feedback_winget_source.md) — Siempre usar --source winget. msstore falla con SSL cert error 0x8a15005e.
+- [DigitalOcean App Platform Gotchas](feedback_digitalocean_deploy.md) — Plan default no es $5; Add from .env es editor de texto; renombrar no cambia URL; clear cache borra env vars; IDs de Google siempre desde URL.
+- [Avast bloquea ondigitalocean.app](feedback_avast_connection_reset.md) — ERR_CONNECTION_RESET en DO = verificar antivirus primero. Avast marca URLs nuevas como ScamT.
+- [gh repo create one-liner](feedback_gh_cli_create_repo.md) — `gh repo create name --source . --remote origin --push` crea repo y pushea en un comando.
+- [Service Account JSON Security](feedback_service_account_security.md) — Nunca procesar credenciales JSON con herramientas propias. Dar comando al usuario para su terminal.
+- [Google API Debug Order](feedback_google_api_debug.md) — "File not found" / "Entity not found" → verificar IDs desde URL primero, luego sharing, luego credenciales.
+- [andyfreelancer — Payment Links](project_andyfreelancer_payment.md) — PayPal.me pre-llena monto (`/amount`), Wise es estático. Env-var-gated pattern. URLs + PATCH_SECRET confirmados.
+- [Plan Mode ExitPlanMode Timing](feedback_planmode_exitplan_timing.md) — No llamar ExitPlanMode mientras usuario recopila datos externos. Esperar "ya tengo el link" / "listo" antes de cerrar el plan.
+- [Port Assignments — Local Dev](port-assignments-local-dev.md) — andres-freelance=3000, skill-creator-web=3001. Guard: Test-Path node_modules antes de npm install.
+- [AI Image Prompts — Logo Specificity](ai-image-prompts-logo-specificity.md) — Usar nombres de marca directos (Spotify logo, Apple Podcasts logo). Root cause de logos incorrectos = vaguedad, no brand naming.
+- [Omni STATIC GRAPHIC OVERLAY](omni-static-graphic-overlay.md) — Técnica para mantener tipografía estática en videos Omni. Solo 9:16 y 16:9. Confirmado EP.002.
+- [Artwork Workflow — Sin Omni](feedback_artwork_workflow_no_omni.md) — Solo Omni/animación descartada por tokens. Quote cards SÍ activas (estáticas, iteración libre). Ver episode-pipeline/03b-marketing.
+- [BTQ Website](btq_website.md) — Live en behind-thequeue.com · Vercel proyecto `website` · Single HTML · `vercel --prod` para actualizar
+- [BTQ Launch Day Rule](btq_launch_day_rule.md) — Lanzamiento domingo 8PM Colombia. Plan social 4 días: Jueves/Sábado/Domingo/Martes. Confirmado por usuario en EP.016 (corrige 2 reglas obsoletas).
+- [Skills en C:, producción en E: — nunca mezclar](feedback_assets_on_e_drive.md) — Causó 24 carpetas huérfanas (limpiadas 2026-06-07). Regla única: 1 skill = 1 lugar (C:), 1 producción = 1 carpeta propia en E:.
+- [Stop Over-Reading Reference Files](feedback_stop_over_reading.md) — Lee hasta entender el patrón, luego construye. No seguir leyendo cuando ya puedes escribir el target.
+- [Kuma Talent Recruiter — Deploy](project_kuma_talent_recruiter.md) — PHP bot, repo privado AndyB840506/kuma-talent-recruiter, 8 env vars listas para DO App Platform
+- [Usar herramienta sugerida por usuario](feedback_use_user_suggested_tool.md) — Si el usuario propone una herramienta específica, usarla directamente. No intentar alternativa primero.
+- [Image Background Removal](feedback_image_bg_removal.md) — Usar removebg.com o Canva MCP. No PowerShell System.Drawing — no maneja anti-aliasing. Flow exporta JPEG sin transparencia.
+- [Laragon Local Dev — Windows](feedback_laragon_local_dev.md) — Nunca crear vhost manualmente; usar symlink en `E:\laragon\www\` → auto-genera conf. www real = `E:\laragon\www\`.
+- [HireSignal — DO Deploy Notes](project_hiresignal_do_deploy.md) — No deployado aún. Stateless filesystem = JSON data se pierde en redeploy. Env vars + gitignore ya configurados.
+- [Verify Before Done](feedback_verify_before_done.md) — Re-run the exact failing scenario and show output before declaring any fix resolved. Never claim done without proof.
+- [PS 5.1 Syntax Rules](feedback_ps51_syntax.md) — No backtick-quotes, no Unicode, no inline-if, no xcopy, no pwsh. Use powershell.exe. Mental parse-check before showing any script.
+- [Confirm IDs Before Deploy](feedback_confirm_ids_before_deploy.md) — Ask user to paste IDs/keys from source URL, echo back, and wait for confirmation before any deploy or env var config.
+- [Deploy Preflight Skill](project_deploy_preflight.md) — Skill at C:\Users\andre\.claude\skills\deploy-preflight\SKILL.md. 6 checks: env format, port conflict, BOM, JSON parse, auth/SSL, shell safety.
+- [Confirm Domain Logic Before Coding](feedback_confirm_domain_logic.md) — Restate any rotation/featured/ordering rule with a concrete example and wait for confirmation before writing code.
+- [Co-host Balance en Scripts](feedback_cohost_balance.md) — Cada host lidera ~50% de segmentos. Juan = shows/mitología/genealogía. Andrés = historia musicológica/hilo narrativo.
+- [HTML Script Format](feedback_html_script_format.md) — Diálogos sin fondo (solo borde izq sutil). Info blocks tint claro. Container 780px. Referencia: EP.003 v2.
+- [MPD vs BTQ Typography](feedback_mpd_vs_btq_typography.md) — No mezclar sistemas tipográficos. MPD tiene su propio sistema (EP.002). Leer mrputridsden_project.md antes de generar artwork prompts.
