@@ -26,3 +26,5 @@
 - [BTQ contact form](reference_btq_contact_form.md) — Web3Forms static form, recipient andy@behind-thequeue.com, access key in the form markup
 - [Redesign feature parity](feedback_redesign_feature_parity.md) — al reemplazar una página live, auditar parity Y discoverability; no quitar ni enterrar contacto/email/redes/nav
 - [Kuma Talent infra](reference_kuma_infra.md) — kumatalent.com=marketing (Vercel kuma-talent-web), app.kumatalent.com=HireSignal (DO); DNS at DO, GoDaddy email; don't churn Vercel domains (resets cert), set apex as serving
+- [AI background + hotspots](reference_ai_background_hotspots.md) — generate painterly scene via Canva (export URL fetchable, thumbnails not) + overlay interactive hotspot layer; don't hand-code perspective in SVG
+- [MPD website live](reference_mpd_website_live.md) — mrputridsden.com, single HTML premium tier, crimson/cream identity, bar-bg + easter eggs; deploy ONLY via prebuilt flow (ignoreCommand=exit 0 → normal --prod is 404)
