@@ -14,6 +14,7 @@
 - [MPD guiones: carne investigada](feedback_mpd_guion_carne_investigada.md) — research real facts (no inventar), match Sabbath/Kraken depth; thin draft rejected
 - [MPD episodes = 2 parts](project_mpd_episodes_two_parts.md) — default to 2-part structure due to research depth; build the P1/P2 cut from the start
 - [BTQ guion style guide](reference_btq_guion_style_guide.md) — consult btq-production/guion-style-btq.md before writing any BTQ guion (chispa rules)
+- [BTQ canonical structure](feedback_btq_canonical_structure.md) — cross-refs OUTSIDE referent + diversified recs + full canonical close (Spotify/LinkedIn/teaser/TM); MPD-meets-TED voice; accessible vocab
 - [andyfreelancer.com infra](reference_andyfreelancer_infra.md) — Express on DO App Platform behind Cloudflare; DNS at DO (Networking), Porkbun registrar dormant; email via Porkbun MX on apex; use DoH not local nslookup
 - [Menús sí, screenshots los saltan](feedback_menus_welcome.md) — usar AskUserQuestion; rechazo + screenshot = "Other" no acepta imágenes, no rechazo al menú
 - [Sesiones paralelas a propósito](feedback_parallel_sessions.md) — compartimenta trabajo en sesiones separadas; no asumir estado cruzado
