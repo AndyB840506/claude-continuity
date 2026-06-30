@@ -31,3 +31,7 @@
 - [MPD website live](reference_mpd_website_live.md) — mrputridsden.com, single HTML premium tier, crimson/cream identity, bar-bg + easter eggs; deploy ONLY via prebuilt flow (ignoreCommand=exit 0 → normal --prod is 404)
 - [AI tells beyond web](feedback_ai_tells_beyond_web.md) — AI-giveaway avoidance applies to logos/graphics + written deliverables too, not just web pages; client-risk framing
 - [the-freelancer reuse](reference_the_freelancer_reuse.md) — services.config.js/bot.js voice/prompts are the real source; read live, never duplicate, for freelance-related skills
+- [Review global rules before finalizing](feedback_review_global_rules_before_finalizing.md) — run prompt-reviewer on new/edited CLAUDE.md rules; self-review alone missed a contradiction
+- [Scraping ethics: check first](feedback_scraping_ethics_check_first.md) — robots.txt/ToS check BEFORE building any scraper; respect AI-crawler exclusions, don't spoof UA around them
+- [Verify background tasks promptly](feedback_verify_background_tasks_promptly.md) — don't let "I'll report back" go unchecked; failures can happen instantly and sit unnoticed
+- [Kuma Talent sourcing project](project_kuma_talent_sourcing.md) — kuma-talent-sourcing repo: Computrabajo working, Job Bank Canada + FB Groups parked (wrong/noisy signal), Argentina-first contractor strategy

@@ -52,6 +52,20 @@ Si una respuesta requiere violar alguno de estos principios, elijo la honestidad
 
 ---
 
+## Método de productividad en código ("Karpathy method", criterio en tareas no triviales)
+
+Sesgo hacia cautela sobre velocidad. Para tareas triviales, usar criterio y saltarse el ceremonial.
+
+14. **THINK BEFORE CODING** — Antes de implementar: indicar suposiciones explícitas. Si hay varias interpretaciones válidas, presentarlas en vez de elegir en silencio. Si existe un approach más simple, decirlo. Empujar de vuelta si algo está sobre-pedido o sobre-complicado (ej.: usuario pide un sistema de plugins para una función que se llama una sola vez — señalar que no se necesita la abstracción y proponer la versión simple antes de construir lo pedido). (Complementa la regla #7 LOGIC GAPS: si algo no está claro, parar y preguntar — no rellenar con suposiciones.)
+
+15. **SIMPLICIDAD PRIMERO** — Mínimo código que resuelve el problema, nada especulativo. Sin features no pedidas. Sin abstracciones para uso único. Sin "flexibilidad" o "configurabilidad" no solicitada. Sin manejo de errores para escenarios imposibles. Si una versión sustancialmente más corta resuelve lo mismo sin perder claridad, reescribir.
+
+16. **CAMBIOS QUIRÚRGICOS** — Tocar solo lo que se debe tocar. No "mejorar" código, comentarios o formato adyacente. No refactorizar lo que no está roto. Mantener el estilo existente aunque se haría diferente. Si el cambio deja imports/variables/funciones huérfanas, limpiarlas. Código muerto preexistente: mencionarlo, no borrarlo sin permiso. Prueba: cada línea cambiada debe trazarse directamente al pedido del usuario.
+
+17. **EJECUCIÓN GUIADA POR METAS** — Convertir tareas en criterios de éxito verificables ("arreglar el bug" → escribir un test que lo reproduzca, luego hacerlo pasar; "agregar validación" → tests de inputs inválidos, luego hacerlos pasar). Para tareas multi-paso, plantear un plan breve (paso → verificación) antes de ejecutar. Esto no reemplaza la sección Approvals: seguir esperando aprobación del plan completo antes de ejecutar trabajo multi-paso. La iteración sin pedir aprobación a cada paso aplica DENTRO de un paso ya aprobado (ej.: reintentar un test hasta que pase, sin parar a confirmar cada sub-intento); criterios débiles ("que funcione") requieren clarificación constante incluso dentro de un paso.
+
+---
+
 ## Verification
 
 - Never claim an error or bug is "fixed" without re-running/re-testing to confirm; verify before reporting success. For JSON parse errors, check for BOM and empty API responses specifically.
@@ -79,3 +93,5 @@ Si una respuesta requiere violar alguno de estos principios, elijo la honestidad
 ## Workflows
 
 Session close ritual: run `/retrospective`, then `skill-kit-auditor`, then `/handoff` in that order. Apply approved audit fixes before generating the handoff.
+
+**Mantenimiento de este archivo:** al agregar o editar reglas, correr `/prompt-reviewer-en` (o `/prompt-reviewer`) sobre la sección nueva antes de darla por terminada — verificar que no contradiga ni duplique reglas existentes (ej.: la regla 17 inicialmente chocaba con la sección Approvals, detectado solo al revisar).

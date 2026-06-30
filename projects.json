@@ -20,10 +20,6 @@
         "folderName":  "claude-projects"
     },
     {
-        "url":  "https://github.com/AndyB840506/claude-skills.git",
-        "folderName":  "claude-skills"
-    },
-    {
         "url":  "https://github.com/AndyB840506/estimador.git",
         "folderName":  "estimador"
     },
@@ -78,10 +74,6 @@
     {
         "url":  "https://github.com/AndyB840506/kit-prospeccion.git",
         "folderName":  "kit-prospeccion"
-    },
-    {
-        "url":  "https://github.com/AndyB840506/claude-code-skills.git",
-        "folderName":  "kit-skill-creator"
     },
     {
         "url":  "https://github.com/AndyB840506/kit-smart-recruiter.git",
