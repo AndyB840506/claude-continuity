@@ -35,3 +35,5 @@
 - [Scraping ethics: check first](feedback_scraping_ethics_check_first.md) — robots.txt/ToS check BEFORE building any scraper; respect AI-crawler exclusions, don't spoof UA around them
 - [Verify background tasks promptly](feedback_verify_background_tasks_promptly.md) — don't let "I'll report back" go unchecked; failures can happen instantly and sit unnoticed
 - [Kuma Talent sourcing project](project_kuma_talent_sourcing.md) — kuma-talent-sourcing repo: Computrabajo working, Job Bank Canada + FB Groups parked (wrong/noisy signal), Argentina-first contractor strategy
+- [HireSignal testing & model state](project_hiresignal_testing.md) — both flows on Opus 4.8 (Sonnet 5 rejected for chat); evals in tests/; hardening shipped 2026-07-01, pending live smoke test
+- [Testing adaptive LLM apps](feedback_adaptive_llm_testing.md) — fixed scripts can't validate the positive case; use an LLM-vs-LLM simulator with ground-truth labels for false-positive/recall
