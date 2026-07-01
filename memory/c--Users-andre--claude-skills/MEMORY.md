@@ -37,4 +37,4 @@
 - [Kuma Talent sourcing project](project_kuma_talent_sourcing.md) — kuma-talent-sourcing repo: Computrabajo working, Job Bank Canada + FB Groups parked (wrong/noisy signal), Argentina-first contractor strategy
 - [HireSignal testing & model state](project_hiresignal_testing.md) — both flows on Opus 4.8 (Sonnet 5 rejected for chat); evals in tests/; hardening shipped 2026-07-01, pending live smoke test
 - [Testing adaptive LLM apps](feedback_adaptive_llm_testing.md) — fixed scripts can't validate the positive case; use an LLM-vs-LLM simulator with ground-truth labels for false-positive/recall
-- [HireSignal interviewer tone](feedback_hiresignal_interviewer_tone.md) — too aggressive/prosecutorial when candidate evades; keep warm & human WHILE probing, don't weaken detection; validate tone via sample transcripts w/ owner
+- [HireSignal interviewer tone](feedback_hiresignal_interviewer_tone.md) — FIXED 2026-07-01, live: DELIVERY guardrail + deferred callbacks (park vague answers, circle back warm, bundle in one Q)

@@ -1,6 +1,6 @@
 ---
 name: project_hiresignal_testing
-description: "HireSignal both flows on Opus 4.8 (Sonnet 5 evaluated & rejected for chat); reusable evals in tests/, hardening shipped 2026-07-01 pending live smoke test"
+description: "HireSignal both flows on Opus 4.8 (Sonnet 5 evaluated & rejected for chat); reusable evals in tests/; hardening + tone-delivery fix both shipped and smoke-tested as of 2026-07-01"
 metadata: 
   node_type: memory
   type: project
@@ -19,5 +19,7 @@ HireSignal (`C:\Users\andre\repos\hiresignal`, PHP, deploys to DO via git push t
 **Shipped to master 2026-07-01 (deployed):** 7 interview-engine fixes — cognitive-block per-turn reminder, anti-loop rule, strong-flag calibration, injection false-positive guard, injection→hard-REJECT (`injection_attempts>=1`), English dealbreaker (required + `basic`→REJECT), and deterministic scoring recomputed server-side from `score × fixed weight` in `applyOverrideRules` (`scoringWeights()`, sum=1.0). Simulator validation: 15/15 verdict accuracy, 0% contradiction/injection false-positives, 100% recall.
 
 **Live smoke test PASSED 2026-07-01** (full real interview → generated PDF report, `✓DB` badge = Postgres connected): report rendered cleanly (no PHP error), deterministic score math verified correct (base 17.9 − 2×15 crit → clamped 0/100), hard-REJECT fired on 2 critical contradictions, anti-loop rule closed the interview gracefully after 3 repeats, and it caught a real fabrication with no false positives. All 7 fixes confirmed working in production.
+
+**Tone-delivery fix shipped 2026-07-01 (`59e4717`, deployed):** see [[feedback_hiresignal_interviewer_tone]] — DELIVERY guardrail bans accusatory phrasing, deferred callbacks replace in-the-moment insistence on vague answers (park → circle back later → bundle multiple parked points into one warm question). Detection logic untouched; validated via a persona-filtered simulator run (`PERSONA=` env var, new) — verdict accuracy 2/2, contradiction recall 1/1, 0 FP.
 
 **Residual:** model contradiction *recall* varies run-to-run (~2-3/3) — a Layer-3 golden-set target, not rule-fixable.
